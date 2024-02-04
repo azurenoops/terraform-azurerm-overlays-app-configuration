@@ -104,7 +104,7 @@ module "overlays-app-configuration" {
 }
 ```
 
-## Comfiguing App Configuration with Purge Protection
+## Configuing App Configuration with Purge Protection
 
 To enable purge protection for the App Configuration, set the `enable_purge_protection` variable to `true`. This will enable purge protection for the App Configuration. It defaults to `false`. This field only works for `standard` sku
 
@@ -130,7 +130,7 @@ module "overlays-app-configuration" {
 }
 ```
 
-## Comfiguing App Configuration with Soft Delete Deletion days
+## Configuing App Configuration with Soft Delete Deletion days
 
 To configure soft deletetion days for the App Configuration, set the `soft_delete_retention_days` variable to number of days that items should be retained for once soft-deleted. This will enable soft delete for the App Configuration. This value can be between `1 and 7` days. Defaults to 7. This field only works for `standard` sku
 
