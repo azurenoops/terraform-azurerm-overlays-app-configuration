@@ -56,6 +56,46 @@ variable "existing_resource_group_name" {
 variable "existing_principal_id" {
   description = "The principal ID of an existing service principal to use for the App Configuration Data Owner role assignment. If not provided, the current service principal will be used."
   type        = string
+  default     = null  
+}
+
+#####################################
+# Private Endpoint Configuration   ##
+#####################################
+
+variable "enable_private_endpoint" {
+  description = "Manages a Private Endpoint to Azure Container Registry. Default is false."
+  default     = false
+}
+
+variable "existing_private_dns_zone" {
+  description = "Name of the existing private DNS zone"
   default     = null
-  
+}
+
+variable "private_subnet_address_prefix" {
+  description = "The name of the subnet for private endpoints"
+  default     = null
+}
+
+variable "create_private_endpoint_subnet" {
+  description = "Controls if the subnet should be created. If set to false, the subnet name must be provided. Default is false."
+  type        = bool
+  default     = false
+}
+
+variable "existing_private_subnet_name" {
+  description = "Name of the existing subnet for the private endpoint"
+  default     = null
+}
+
+variable "existing_private_virtual_network_name" {
+  description = "Name of the existing virtual network for the private endpoint"
+  default     = null
+}
+
+variable "resource_types" {
+  description = "The Azure resource types to which the private endpoint will be connected. Default is ['configurationStores']."
+  type        = list(string)
+  default     = ["configurationStores"]
 }
